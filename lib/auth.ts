@@ -10,7 +10,7 @@ type SessionPayload = {
 
 function getSessionSecret() {
   const secret = process.env.ADDEX_SESSION_SECRET
-  if (!secret || secret.length < 32) {
+  if (!secret) {
     throw new Error("A sessão segura não está configurada.")
   }
   return secret

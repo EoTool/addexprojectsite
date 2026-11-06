@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
   const accessKey = process.env.ADDEX_ACCESS_KEY
   const sessionSecret = process.env.ADDEX_SESSION_SECRET
-  if (!accessKey || accessKey.length < 32 || !sessionSecret || sessionSecret.length < 32) {
+  if (!accessKey || !sessionSecret) {
     return NextResponse.json(
       { error: "A configuração segura do portal está indisponível." },
       { status: 503 },
